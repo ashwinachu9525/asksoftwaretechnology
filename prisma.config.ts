@@ -9,8 +9,19 @@ try {
   const schemaPath = path.resolve(__dirname, "prisma/schema.prisma");
   if (fs.existsSync(schemaPath)) {
     let schema = fs.readFileSync(schemaPath, "utf8");
-    const dbUrl = process.env.DATABASE_URL || "";
-    const isPostgres = dbUrl.startsWith("postgres://") || dbUrl.startsWith("postgresql://") || dbUrl.startsWith("prisma://") || dbUrl.startsWith("neon://");
+    const dbUrl = (process.env.DATABASE_URL || "").trim();
+    const lowerUrl = dbUrl.toLowerCase();
+    const isPostgres =
+      lowerUrl.startsWith("postgres://") ||
+      lowerUrl.startsWith("postgresql://") ||
+      lowerUrl.startsWith("jdbc:postgresql://") ||
+      lowerUrl.startsWith("prisma://") ||
+      lowerUrl.startsWith("neon://") ||
+      lowerUrl.includes("aivencloud") ||
+      lowerUrl.includes("neondb") ||
+      lowerUrl.includes("supabase") ||
+      lowerUrl.includes("sslmode=") ||
+      (lowerUrl.includes("@") && !lowerUrl.startsWith("file:"));
     const targetProvider = isPostgres ? "postgresql" : "sqlite";
     schema = schema.replace(/provider\s*=\s*"(sqlite|postgresql)"/, `provider = "${targetProvider}"`);
     fs.writeFileSync(schemaPath, schema);

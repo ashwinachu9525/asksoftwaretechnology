@@ -2,19 +2,50 @@ import { PrismaClient } from '@prisma/client';
 import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
 import { Pool } from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
+import fs from 'fs';
+import path from 'path';
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
-function createPrismaClient() {
-  const dbUrl = process.env.DATABASE_URL || 'file:./dev.db';
+function isPostgresUrl(rawUrl: string): boolean {
+  if (!rawUrl) return false;
+  const lower = rawUrl.toLowerCase().trim();
+  return (
+    lower.startsWith('postgres://') ||
+    lower.startsWith('postgresql://') ||
+    lower.startsWith('jdbc:postgresql://') ||
+    lower.startsWith('prisma://') ||
+    lower.startsWith('neon://') ||
+    lower.includes('aivencloud') ||
+    lower.includes('neondb') ||
+    lower.includes('supabase') ||
+    lower.includes('sslmode=') ||
+    (lower.includes('@') && !lower.startsWith('file:'))
+  );
+}
 
-  if (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://') || dbUrl.startsWith('prisma://') || dbUrl.startsWith('neon://')) {
-    const isSsl = dbUrl.includes('sslmode=') || dbUrl.includes('ssl=true') || dbUrl.includes('aivencloud') || !dbUrl.includes('localhost');
-    let connectionString = dbUrl;
+function normalizePostgresUrl(rawUrl: string): string {
+  let url = rawUrl.trim();
+  if (url.startsWith('jdbc:')) {
+    url = url.slice(5);
+  }
+  if (!url.startsWith('postgres://') && !url.startsWith('postgresql://') && !url.startsWith('prisma://') && !url.startsWith('neon://')) {
+    url = 'postgres://' + url;
+  }
+  return url;
+}
+
+function createPrismaClient() {
+  const rawDbUrl = (process.env.DATABASE_URL || 'file:./dev.db').trim();
+
+  if (isPostgresUrl(rawDbUrl)) {
+    const normalizedUrl = normalizePostgresUrl(rawDbUrl);
+    const isSsl = normalizedUrl.includes('sslmode=') || normalizedUrl.includes('ssl=true') || normalizedUrl.includes('aivencloud') || !normalizedUrl.includes('localhost');
+    let connectionString = normalizedUrl;
 
     if (isSsl) {
       try {
-        const url = new URL(dbUrl);
+        const url = new URL(normalizedUrl);
         url.searchParams.delete('ssl');
         url.searchParams.set('sslmode', 'no-verify');
         connectionString = url.toString();
@@ -30,13 +61,25 @@ function createPrismaClient() {
     const pool = new Pool({
       connectionString,
       ssl: isSsl ? { rejectUnauthorized: false } : undefined,
+      max: 1,
+      connectionTimeoutMillis: 15000,
     });
     const adapter = new PrismaPg(pool);
     return new PrismaClient({ adapter, log: ['error'] });
   }
 
+  const filePath = rawDbUrl.replace(/^file:/, '').trim() || './dev.db';
+  try {
+    const dirPath = path.dirname(path.resolve(filePath));
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+  } catch {
+    // Ignore directory creation errors
+  }
+
   const adapter = new PrismaBetterSqlite3({
-    url: dbUrl,
+    url: rawDbUrl,
   });
   return new PrismaClient({ adapter, log: ['error'] });
 }
@@ -45,22 +88,35 @@ export const prisma = globalForPrisma.prisma || createPrismaClient();
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
+let hasSeeded = false;
+
 export async function ensureSeedData() {
+  if (hasSeeded || process.env.NEXT_PHASE === 'phase-production-build') return;
   try {
-    const userCount = await prisma.user.count();
-    if (userCount === 0) {
-      await prisma.user.create({
-        data: {
-          email: 'admin@abctechnologies.com',
-          password: 'admin123', // Demo login credentials
-          name: 'ABC Admin Team',
-        },
-      });
-    }
+    await prisma.user.upsert({
+      where: { email: 'admin@asksoftware.tech' },
+      update: {},
+      create: {
+        email: 'admin@asksoftware.tech',
+        password: 'admin123', // Demo login credentials
+        name: 'ABC Admin Team',
+      },
+    });
+
+    await prisma.user.upsert({
+      where: { email: 'admin@abctechnologies.com' },
+      update: {},
+      create: {
+        email: 'admin@abctechnologies.com',
+        password: 'admin123',
+        name: 'ABC Admin Team',
+      },
+    });
 
     const postCount = await prisma.post.count();
     if (postCount === 0) {
       await prisma.post.createMany({
+        skipDuplicates: true,
         data: [
           {
             title: 'How AI & Machine Learning Are Transforming Enterprise Custom Software in 2026',
@@ -120,18 +176,17 @@ Explore our services and get in touch with our founders to discuss your next big
       });
     }
 
-    const sysConfig = await prisma.systemConfig.findUnique({
+    await prisma.systemConfig.upsert({
       where: { id: 'global' },
+      update: {},
+      create: {
+        id: 'global',
+        aiPrimaryProvider: 'Google Gemini',
+        aiFallbackOrder: 'Google Gemini,Nvidia NIM,OpenRouter,OpenAI',
+      },
     });
-    if (!sysConfig) {
-      await prisma.systemConfig.create({
-        data: {
-          id: 'global',
-          aiPrimaryProvider: 'Google Gemini',
-          aiFallbackOrder: 'Google Gemini,Nvidia NIM,OpenRouter,OpenAI',
-        },
-      });
-    }
+
+    hasSeeded = true;
   } catch (err) {
     console.error('Failed to seed DB:', err);
   }
