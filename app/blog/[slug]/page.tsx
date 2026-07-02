@@ -110,7 +110,7 @@ export default async function BlogPostPage({
         <div className="space-y-6 pt-12 border-t border-slate-800">
           <h3 className="text-2xl font-bold text-white">More Engineering Insights</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {relatedPosts.map((rel) => (
+            {relatedPosts.map((rel: any) => (
               <Link
                 key={rel.id}
                 href={`/blog/${rel.slug}`}
