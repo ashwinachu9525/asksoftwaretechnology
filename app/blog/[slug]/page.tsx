@@ -14,21 +14,27 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
 
-  const post = await prisma.post.findUnique({
-    where: { slug },
-  });
+  let post: any = null;
+  let relatedPosts: any[] = [];
+  try {
+    post = await prisma.post.findUnique({
+      where: { slug },
+    });
+    if (post) {
+      relatedPosts = await prisma.post.findMany({
+        where: {
+          id: { not: post.id },
+        },
+        take: 2,
+      });
+    }
+  } catch (err) {
+    console.error('Failed to fetch blog post:', err);
+  }
 
   if (!post) {
     notFound();
   }
-
-  // Related articles
-  const relatedPosts = await prisma.post.findMany({
-    where: {
-      id: { not: post.id },
-    },
-    take: 2,
-  });
 
   return (
     <article className="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

@@ -9,10 +9,15 @@ import {
 export const revalidate = 0; // Ensure fresh blog posts are fetched dynamically
 
 export default async function HomePage() {
-  const latestPosts = await prisma.post.findMany({
-    take: 3,
-    orderBy: { publishedAt: 'desc' },
-  });
+  let latestPosts: any[] = [];
+  try {
+    latestPosts = await prisma.post.findMany({
+      take: 3,
+      orderBy: { publishedAt: 'desc' },
+    });
+  } catch (err) {
+    console.error('Failed to fetch latest posts on HomePage:', err);
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
