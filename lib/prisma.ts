@@ -10,8 +10,25 @@ function createPrismaClient() {
 
   if (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://') || dbUrl.startsWith('prisma://') || dbUrl.startsWith('neon://')) {
     const isSsl = dbUrl.includes('sslmode=') || dbUrl.includes('ssl=true') || dbUrl.includes('aivencloud') || !dbUrl.includes('localhost');
+    let connectionString = dbUrl;
+
+    if (isSsl) {
+      try {
+        const url = new URL(dbUrl);
+        url.searchParams.delete('ssl');
+        url.searchParams.set('sslmode', 'no-verify');
+        connectionString = url.toString();
+      } catch {
+        if (connectionString.includes('sslmode=')) {
+          connectionString = connectionString.replace(/sslmode=[^&]+/, 'sslmode=no-verify');
+        } else {
+          connectionString += (connectionString.includes('?') ? '&' : '?') + 'sslmode=no-verify';
+        }
+      }
+    }
+
     const pool = new Pool({
-      connectionString: dbUrl,
+      connectionString,
       ssl: isSsl ? { rejectUnauthorized: false } : undefined,
     });
     const adapter = new PrismaPg(pool);
