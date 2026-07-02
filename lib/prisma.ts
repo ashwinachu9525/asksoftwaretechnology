@@ -1,11 +1,21 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
+import { Pool } from 'pg';
+import { PrismaPg } from '@prisma/adapter-pg';
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
 function createPrismaClient() {
+  const dbUrl = process.env.DATABASE_URL || 'file:./dev.db';
+
+  if (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://') || dbUrl.startsWith('prisma://') || dbUrl.startsWith('neon://')) {
+    const pool = new Pool({ connectionString: dbUrl });
+    const adapter = new PrismaPg(pool);
+    return new PrismaClient({ adapter, log: ['error'] });
+  }
+
   const adapter = new PrismaBetterSqlite3({
-    url: process.env.DATABASE_URL || 'file:./dev.db',
+    url: dbUrl,
   });
   return new PrismaClient({ adapter, log: ['error'] });
 }
