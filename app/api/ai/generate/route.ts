@@ -94,22 +94,22 @@ function getFallbackGeneration(action: string, topic?: string, category?: string
 
   if (action === 'suggest') {
     const titles = [
-      `Next-Generation ${cat}: How Ask Software Technologies Transforms Digital Workflows`,
-      `Architecting High-Concurrency Systems: Lessons from Ask Engineering Pods`,
+      `Next-Generation ${cat}: How ABC Technologies Transforms Digital Workflows`,
+      `Architecting High-Concurrency Systems: Lessons from ABC Engineering Pods`,
       `Why 2026 is the Tipping Point for Autonomous AI Agents in Enterprise Software`,
     ];
     const pickedTitle = titles[Math.floor(Math.random() * titles.length)];
     return {
       title: pickedTitle,
       excerpt: `An architectural analysis on how ${cat.toLowerCase()} pipelines reduce operational latency by 45% and accelerate time-to-market.`,
-      content: `### Executive Overview\nAs organizations scale, traditional software monoliths become bottlenecks. At Ask Software Technologies, our engineering pods deploy AI-driven distributed microservices designed for 99.999% uptime.\n\n### The Core Architectural Principles\n1. **Event-Driven Resilience**: Decoupling user mutations from analytics ingestion.\n2. **Zero-Trust Security Framework**: Enforcing AES-256 encryption across all data layers.\n3. **Agentic Automation**: Utilizing intelligent autonomous agents to monitor health and auto-heal pods.\n\n### Partner with Ask Software Technologies\nReady to transform your technical architecture? Contact our engineering leadership today!`,
+      content: `### Executive Overview\nAs organizations scale, traditional software monoliths become bottlenecks. At ABC Technologies, our engineering pods deploy AI-driven distributed microservices designed for 99.999% uptime.\n\n### The Core Architectural Principles\n1. **Event-Driven Resilience**: Decoupling user mutations from analytics ingestion.\n2. **Zero-Trust Security Framework**: Enforcing AES-256 encryption across all data layers.\n3. **Agentic Automation**: Utilizing intelligent autonomous agents to monitor health and auto-heal pods.\n\n### Partner with ABC Technologies\nReady to transform your technical architecture? Contact our engineering leadership today!`,
     };
   }
 
   return {
     title: t,
     excerpt: `Discover the exact engineering roadmap and best practices for integrating ${cat} into core enterprise infrastructures.`,
-    content: `When engineering high-performance digital products, architectural decisions made on day one dictate your scalability five years later. At **Ask Software Technologies**, we specialize in designing systems that thrive under immense load.\n\n### 1. Eliminating Single Points of Failure\nBy leveraging multi-region cloud clustering and intelligent read/write replication, system downtime becomes a artifact of the past.\n\n### 2. AI-Native Workflow Orchestration\nIntegrating LLMs directly into transactional databases allows real-time data synthesis and predictive anomaly detection.\n\n### Conclusion\nWhether modernizing legacy codebases or building high-speed greenfield projects, Ask Software Technologies provides world-class execution.`,
+    content: `When engineering high-performance digital products, architectural decisions made on day one dictate your scalability five years later. At **ABC Technologies**, we specialize in designing systems that thrive under immense load.\n\n### 1. Eliminating Single Points of Failure\nBy leveraging multi-region cloud clustering and intelligent read/write replication, system downtime becomes a artifact of the past.\n\n### 2. AI-Native Workflow Orchestration\nIntegrating LLMs directly into transactional databases allows real-time data synthesis and predictive anomaly detection.\n\n### Conclusion\nWhether modernizing legacy codebases or building high-speed greenfield projects, ABC Technologies provides world-class execution.`,
   };
 }
 
@@ -128,11 +128,11 @@ export async function POST(request: Request) {
       : ['Google Gemini', 'Nvidia NIM', 'OpenRouter', 'OpenAI'];
 
     // Ensure primary is checked first, followed by fallbacks
-    const providersToTry = [primary, ...fallbackList.filter((p) => p !== primary)];
+    const providersToTry = [primary, ...fallbackList.filter((p: string) => p !== primary)];
 
     const prompt = action === 'beautify'
-      ? `You are a senior tech editor at Ask Software Technologies. Rewrite and format the following blog article into beautiful markdown with professional headers (###), engaging intro, bullet points, and clean syntax:\n\n${existingContent}`
-      : `You are Chief AI Architect at Ask Software Technologies. Write a comprehensive, engaging tech blog post about "${topic || 'Enterprise Software Innovations'}" in the category "${category || 'AI & Tech'}". Return JSON format with fields: "title", "excerpt", and "content" (in markdown).`;
+      ? `You are a senior tech editor at ABC Technologies. Rewrite and format the following blog article into beautiful markdown with professional headers (###), engaging intro, bullet points, and clean syntax:\n\n${existingContent}`
+      : `You are Chief AI Architect at ABC Technologies. Write a comprehensive, engaging tech blog post about "${topic || 'Enterprise Software Innovations'}" in the category "${category || 'AI & Tech'}". Return JSON format with fields: "title", "excerpt", and "content" (in markdown).`;
 
     for (const provider of providersToTry) {
       let resultText: string | null = null;
@@ -185,7 +185,7 @@ export async function POST(request: Request) {
       success: true,
       providerUsed: `${primary} (Orchestrator Sandbox Mode)`,
       result: simulated,
-      note: 'Generated using Ask AI Orchestrator sandbox. Add live API keys in AI Settings to enable live neural generation.',
+      note: 'Generated using ABC AI Orchestrator sandbox. Add live API keys in AI Settings to enable live neural generation.',
     });
   } catch (error) {
     console.error('AI Orchestrator Error:', error);

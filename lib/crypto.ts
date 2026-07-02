@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 
 // Master key derived from environment or system constant via sha256 to guarantee 32 bytes for AES-256
-const MASTER_SECRET = process.env.ENCRYPTION_MASTER_KEY || 'ASK_SOFTWARE_TECH_MILITARY_GRADE_SECRET_AES_256_GCM_2026';
+const MASTER_SECRET = process.env.ENCRYPTION_MASTER_KEY || 'ABC_TECHNOLOGIES_MILITARY_GRADE_SECRET_AES_256_GCM_2026';
 const ALGORITHM = 'aes-256-gcm';
 
 function getDerivedKey(): Buffer {

@@ -81,13 +81,13 @@ export async function POST(request: Request) {
       },
     });
 
-    const recipient = config.smtpFrom || config.smtpUser || 'hello@asksoftware.tech';
+    const recipient = config.smtpFrom || config.smtpUser || 'hello@abctechnologies.com';
 
     if (isTestMail) {
-      await transporter.sendMail({
-        from: `Ask Software Technologies <${config.smtpUser}>`,
+      const info = await transporter.sendMail({
+        from: `ABC Technologies <${config.smtpUser}>`,
         to: recipient,
-        subject: '🚀 [Test Mail] Ask Software Tech Military-Grade SMTP Verification',
+        subject: '🚀 [Test Mail] ABC Technologies Military-Grade SMTP Verification',
         html: `
           <div style="font-family: sans-serif; padding: 20px; background: #0f172a; color: #f8fafc; border-radius: 12px;">
             <h2 style="color: #38bdf8;">SMTP Verification Successful!</h2>
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
 
     // Send actual contact form email
     await transporter.sendMail({
-      from: `Ask Website Portal <${config.smtpUser}>`,
+      from: `ABC Website Portal <${config.smtpUser}>`,
       to: recipient,
       replyTo: email,
       subject: `New Project Inquiry: ${service} from ${name} (${company || 'Individual'})`,

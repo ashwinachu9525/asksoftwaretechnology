@@ -54,7 +54,7 @@ export default function AdminDashboardPage() {
   // Blog Form
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('AI & Tech');
-  const [author, setAuthor] = useState('Ask Engineering Squad');
+  const [author, setAuthor] = useState('ABC Engineering Squad');
   const [excerpt, setExcerpt] = useState('');
   const [content, setContent] = useState('');
   const [previewMode, setPreviewMode] = useState<'edit' | 'preview' | 'split'>('edit');
@@ -685,7 +685,7 @@ export default function AdminDashboardPage() {
                       required
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
-                      placeholder="e.g., How Ask Software Technologies scales AI models..."
+                      placeholder="e.g., How ABC Technologies scales AI models..."
                       className="w-full bg-slate-950 dark:bg-slate-950 light:bg-white border border-slate-800 dark:border-slate-800 light:border-slate-300 rounded-xl px-4 py-3 text-sm focus:border-blue-500"
                     />
                   </div>
@@ -1374,7 +1374,7 @@ export default function AdminDashboardPage() {
             <div className="space-y-8 animate-in fade-in max-w-4xl mx-auto">
               <div className="text-center space-y-2">
                 <h2 className="text-3xl font-extrabold text-white dark:text-white light:text-slate-900">System Configuration & Security Manual</h2>
-                <p className="text-sm text-slate-400">Complete architectural guide for Ask Software Technologies administrators.</p>
+                <p className="text-sm text-slate-400">Complete architectural guide for ABC Technologies administrators.</p>
               </div>
 
               <div className="space-y-6">

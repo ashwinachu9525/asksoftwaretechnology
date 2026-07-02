@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
           <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center mx-auto shadow-lg shadow-purple-500/30">
             <Lock className="w-7 h-7 text-white" />
           </div>
-          <h1 className="text-2xl font-extrabold text-white dark:text-white light:text-slate-900">Ask Team CMS Login</h1>
+          <h1 className="text-2xl font-extrabold text-white dark:text-white light:text-slate-900">ABC Team CMS Login</h1>
           <p className="text-xs text-slate-400">
             Secure Portal for managing Enterprise CMS & AI Orchestrator.
           </p>

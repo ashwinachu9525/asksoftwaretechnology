@@ -59,7 +59,7 @@ export async function POST(request: Request) {
         excerpt: excerpt || content.substring(0, 150) + '...',
         content,
         category: category || 'General',
-        author: author || 'Ask Admin Team',
+        author: author || 'ABC Admin Team',
       },
     });
 

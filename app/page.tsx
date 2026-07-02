@@ -25,7 +25,7 @@ export default async function HomePage() {
           <div className="text-center max-w-4xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-blue-500/30 text-xs font-semibold tracking-wide uppercase text-blue-300 animate-in fade-in slide-in-from-top-4 duration-500 shadow-lg shadow-blue-500/10">
               <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-spin" style={{ animationDuration: '4s' }} />
-              <span>Ask Software Technologies Studio</span>
+              <span>ABC Technologies Studio</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15]">

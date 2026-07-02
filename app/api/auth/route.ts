@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     });
 
     if (!user || user.password !== password) {
-      return NextResponse.json({ error: 'Invalid login credentials. Default demo credentials: admin@asksoftware.tech / admin123' }, { status: 401 });
+      return NextResponse.json({ error: 'Invalid login credentials. Default demo credentials: admin@abctechnologies.com / admin123' }, { status: 401 });
     }
 
     // Return user info on success
