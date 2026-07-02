@@ -29,10 +29,10 @@ export default function ClientsPartnersPage() {
       color: 'from-emerald-600/20 to-green-600/20 border-emerald-500/30 text-emerald-400',
     },
     {
-      name: 'Crimson Manufacturing Solutions',
+      name: 'ABC Technologies (Turnkey Division)',
       category: 'industrial',
-      type: 'Turnkey IIoT & Automation Client',
-      description: 'Modernized legacy systems into state-of-the-art turnkey industrial automation, metal stamping CAD/CAM telemetry, and real-time cloud analytics.',
+      type: 'Turnkey IIoT & Automation Client Systems',
+      description: 'Built state-of-the-art turnkey industrial automation platforms, precision sensor telemetry, and real-time cloud analytics.',
       badge: 'Flagship Upgrade Case Study',
       color: 'from-rose-600/20 to-amber-600/20 border-rose-500/30 text-rose-400',
     },
@@ -93,8 +93,8 @@ export default function ClientsPartnersPage() {
         <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
           Enterprise Clients & <span className="text-gradient">Strategic Partners</span>
         </h1>
-        <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
-          At Ask Software Technologies, we collaborate with frontier AI infrastructure providers and deliver mission-critical software upgrades for industry leaders globally.
+        <p className="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          At ABC Technologies, we collaborate with frontier AI infrastructure providers and deliver mission-critical software upgrades for industry leaders globally.
         </p>
       </div>
 
@@ -218,11 +218,11 @@ export default function ClientsPartnersPage() {
             </div>
             
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Turnkey Industrial Upgrade: Crimson Manufacturing Solutions
+              Turnkey Enterprise Upgrade: ABC Technologies Ecosystem
             </h2>
             
             <p className="text-base text-slate-300 leading-relaxed max-w-2xl">
-              By replacing fragmented legacy tooling and outdated data systems with modern Ask Software Technologies architecture, we enabled Crimson Manufacturing to achieve sub-millisecond CAD/CAM sensor telemetry and real-time enterprise resource orchestration.
+              By replacing fragmented legacy tooling and outdated data platforms with modern ABC Technologies architecture, enterprise client plants achieve sub-millisecond IoT sensor telemetry and real-time cloud orchestration.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 pt-2">

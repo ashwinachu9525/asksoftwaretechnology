@@ -20,9 +20,9 @@ export async function ensureSeedData() {
     if (userCount === 0) {
       await prisma.user.create({
         data: {
-          email: 'admin@asksoftware.tech',
+          email: 'admin@abctechnologies.com',
           password: 'admin123', // Demo login credentials
-          name: 'Ask Admin Team',
+          name: 'ABC Admin Team',
         },
       });
     }
@@ -35,7 +35,7 @@ export async function ensureSeedData() {
             title: 'How AI & Machine Learning Are Transforming Enterprise Custom Software in 2026',
             slug: 'ai-ml-transforming-enterprise-software-2026',
             excerpt: 'Discover why integrating Large Language Models and custom neural networks into core business architectures yields 40% higher productivity.',
-            content: `Modern software architecture has fundamentally evolved. At Ask Software Technologies, we've witnessed first-hand how integrating intelligent agents and AI pipelines into custom enterprise software transforms organizational speed and scalability.
+            content: `Modern software architecture has fundamentally evolved. At ABC Technologies, we've witnessed first-hand how integrating intelligent agents and AI pipelines into custom enterprise software transforms organizational speed and scalability.
 
 ### The Shift from Static Systems to Adaptive Intelligence
 Traditional enterprise workflows often rely on static rules and manual oversight. By embedding predictive machine learning pipelines directly into business logic, companies automate complex decision-making.
@@ -45,7 +45,7 @@ Traditional enterprise workflows often rely on static rules and manual oversight
 2. **Automated Workflow Orchestration**: Reduce operational friction with autonomous AI subagents.
 3. **Enterprise-Grade Security**: Keep sensitive corporate data strictly protected within isolated VPCs.
 
-Whether you are scaling a fast-growing startup or modernizing legacy infrastructure, Ask Software Technologies provides the architectural excellence needed to thrive.`,
+Whether you are scaling a fast-growing startup or modernizing legacy infrastructure, ABC Technologies provides the architectural excellence needed to thrive.`,
             category: 'AI & Tech',
             author: 'Aswin Kumar - Chief Architect',
           },
@@ -53,7 +53,7 @@ Whether you are scaling a fast-growing startup or modernizing legacy infrastruct
             title: 'Why Microservices & Cloud Native DevOps Are Critical for High-Growth Startups',
             slug: 'microservices-cloud-native-devops-startups',
             excerpt: 'Learn the architectural blueprints that enable startups to scale from 1,000 to 10M active users without system downtime.',
-            content: `When building a startup, speed to market is critical—but scalability is what keeps you alive when viral growth hits. At Ask Software Technologies, we design cloud-native infrastructures that scale effortlessly.
+            content: `When building a startup, speed to market is critical—but scalability is what keeps you alive when viral growth hits. At ABC Technologies, we design cloud-native infrastructures that scale effortlessly.
 
 ### Why Serverless and Containerization Win
 By leveraging Docker, Kubernetes, and edge-deployed serverless functions, your infrastructure automatically adapts to traffic spikes while keeping cloud bills optimized.
@@ -65,13 +65,13 @@ By leveraging Docker, Kubernetes, and edge-deployed serverless functions, your i
 
 Reach out to our cloud engineering team today to audit your current architecture!`,
             category: 'Cloud Engineering',
-            author: 'Ask DevOps Team',
+            author: 'ABC DevOps Team',
           },
           {
-            title: 'Introducing Ask Software Technologies: Building Next-Gen Digital Products',
-            slug: 'introducing-ask-software-technologies',
+            title: 'Introducing ABC Technologies: Building Next-Gen Digital Products',
+            slug: 'introducing-abc-technologies',
             excerpt: 'We are thrilled to officially launch our custom software engineering and digital transformation studio focused on delivering high-impact software.',
-            content: `Welcome to Ask Software Technologies! We founded this company with a singular mission: to eliminate the gap between complex software engineering concepts and breathtaking, reliable digital products.
+            content: `Welcome to ABC Technologies! We founded this company with a singular mission: to eliminate the gap between complex software engineering concepts and breathtaking, reliable digital products.
 
 ### Who We Are
 We are a specialized team of senior full-stack engineers, AI researchers, and UI/UX designers obsessed with clean code and remarkable user experiences.

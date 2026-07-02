@@ -66,7 +66,7 @@ export default async function BlogPostPage({
             </div>
             <div>
               <p className="text-sm font-bold text-white">{post.author}</p>
-              <p className="text-xs text-slate-400">Ask Software Technologies Engineering</p>
+              <p className="text-xs text-slate-400">ABC Technologies Engineering</p>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ export default async function BlogPostPage({
           </div>
           <div>
             <h4 className="text-lg font-bold text-white">About the Author: {post.author}</h4>
-            <p className="text-xs text-blue-400 font-semibold uppercase tracking-wider">Ask Architecture & Research Group</p>
+            <p className="text-xs text-blue-400 font-semibold uppercase tracking-wider">ABC Architecture & Research Group</p>
           </div>
         </div>
         <p className="text-sm text-slate-300 leading-relaxed">

@@ -58,8 +58,8 @@ export default function BlogPage() {
           <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight">
             Engineering <span className="text-gradient">Insights & Blog</span>
           </h1>
-          <p className="text-slate-300 text-base max-w-2xl">
-            Deep dives into enterprise software architecture, AI agent systems, and cloud native engineering directly from Ask Software Technologies architects.
+          <p className="text-lg text-slate-300 leading-relaxed">
+            Deep dives into enterprise software architecture, AI agent systems, and cloud native engineering directly from ABC Technologies architects.
           </p>
         </div>
       </div>

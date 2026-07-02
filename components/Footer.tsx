@@ -26,20 +26,20 @@ export default function Footer() {
                 <Terminal className="h-5 w-5 text-white" />
               </div>
               <span className="font-extrabold text-lg text-white">
-                ASK <span className="text-gradient">SOFTWARE</span> TECH
+                ABC <span className="text-gradient">TECHNOLOGIES</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Architecting modern, resilient, and intelligent digital solutions. We help startups and ambitious enterprises build next-generation web applications, AI systems, and cloud-native infrastructure.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a href="https://asksoftware.tech" target="_blank" rel="noreferrer" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Website">
+              <a href="https://abctechnologies.com" target="_blank" rel="noreferrer" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Website">
                 <Globe className="h-4 w-4" />
               </a>
-              <a href="https://asksoftware.tech" target="_blank" rel="noreferrer" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Social">
+              <a href="https://abctechnologies.com" target="_blank" rel="noreferrer" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Social">
                 <Share2 className="h-4 w-4" />
               </a>
-              <a href="mailto:hello@asksoftware.tech" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Community">
+              <a href="mailto:hello@abctechnologies.com" className="h-9 w-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500/50 transition-all" title="Community">
                 <MessageCircle className="h-4 w-4" />
               </a>
             </div>
@@ -80,11 +80,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-purple-400 shrink-0" />
-                <a href="mailto:hello@asksoftware.tech" className="hover:text-white transition-colors">hello@asksoftware.tech</a>
+                <a href="mailto:hello@abctechnologies.com" className="hover:text-white transition-colors">hello@abctechnologies.com</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>+1 (800) 555-ASK-TECH</span>
+                <span>+1 (800) 555-ABC-TECH</span>
               </li>
             </ul>
           </div>
@@ -92,14 +92,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Ask Software Technologies Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ABC Technologies Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/admin/login" className="hover:text-slate-300 transition-colors flex items-center gap-1">
               <span>Admin Login</span>
               <ArrowUpRight className="w-3 h-3" />
             </Link>
             <span className="flex items-center gap-1">
-              Built with <Heart className="w-3.5 h-3.5 text-rose-500 inline fill-rose-500" /> by Ask Engineering
+              Built with <Heart className="w-3.5 h-3.5 text-rose-500 inline fill-rose-500" /> by ABC Engineering
             </span>
           </div>
         </div>

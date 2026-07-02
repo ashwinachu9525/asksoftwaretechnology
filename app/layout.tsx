@@ -18,11 +18,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Ask Software Technologies | Enterprise Custom Software & AI Engineering Studio",
-  description: "Ask Software Technologies is a premier custom software engineering and digital transformation studio specializing in enterprise web applications, AI & LLM integration, and cloud-native DevOps.",
-  keywords: ["Ask Software Technologies", "Custom Software Engineering", "AI Integration", "Cloud DevOps", "Next.js Development", "Enterprise Software Studio"],
+  title: "ABC Technologies | Enterprise Custom Software & AI Engineering Studio",
+  description: "ABC Technologies is a premier custom software engineering and digital transformation studio specializing in enterprise web applications, AI & LLM integration, and cloud-native DevOps.",
+  keywords: ["ABC Technologies", "Custom Software Engineering", "AI Integration", "Cloud DevOps", "Next.js Development", "Enterprise Software Studio"],
   openGraph: {
-    title: "Ask Software Technologies | Custom Software & AI Studio",
+    title: "ABC Technologies | Custom Software & AI Studio",
     description: "Architecting modern, resilient, and intelligent digital solutions for startups and enterprises.",
     type: "website",
   },

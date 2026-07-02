@@ -28,8 +28,8 @@ export default function ContactPage() {
       city: 'Silicon Valley (HQ)',
       country: 'United States',
       address: 'Tech Innovation Hub, Suite 400, San Francisco, CA',
-      phone: '+1 (800) 555-ASK-TECH',
-      email: 'hq@asksoftware.tech',
+      phone: '+1 (800) 555-ABC-TECH',
+      email: 'hq@abctechnologies.com',
       timezone: 'PST (UTC-8)',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017948534!3d37.757814996609724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1719900000000!5m2!1sen!2sus',
     },
@@ -38,7 +38,7 @@ export default function ContactPage() {
       country: 'India',
       address: 'Electronic City Phase 1, Tech Corridor, Bengaluru, Karnataka',
       phone: '+91 80 4555 0192',
-      email: 'india@asksoftware.tech',
+      email: 'india@abctechnologies.com',
       timezone: 'IST (UTC+5:30)',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085284307567!3d12.953959988118836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka%2C%20India!5e0!3m2!1sen!2sin!4v1719900000000!5m2!1sen!2sin',
     },
@@ -47,7 +47,7 @@ export default function ContactPage() {
       country: 'United Kingdom',
       address: 'Shoreditch Tech Tower, Shoreditch High St, London E1',
       phone: '+44 20 7946 0911',
-      email: 'uk@asksoftware.tech',
+      email: 'uk@abctechnologies.com',
       timezone: 'GMT (UTC+0)',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.47339870626!2d-0.24168058968037373!3d51.52855824164916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2suk!4v1719900000000!5m2!1sen!2suk',
     },
@@ -56,7 +56,7 @@ export default function ContactPage() {
       country: 'Singapore',
       address: 'Marina Bay Financial Centre Tower 3, Singapore 018982',
       phone: '+65 6789 0123',
-      email: 'apac@asksoftware.tech',
+      email: 'apac@abctechnologies.com',
       timezone: 'SGT (UTC+8)',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036281522!2d103.70416182103322!3d1.3143393796336336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1719900000000!5m2!1sen!2ssg',
     },
@@ -95,8 +95,8 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      q: 'How fast can Ask Software Technologies start on our project?',
-      a: 'We typically onboard new engineering pods within 5 to 10 business days following architecture alignment and proposal approval.',
+      q: 'How fast can ABC Technologies start on our project?',
+      a: 'Depending on required squad size and security clearances, we typically complete architecture onboarding within 5 business days.',
     },
     {
       q: 'Do we own the Intellectual Property (IP) and source code?',
@@ -135,7 +135,7 @@ export default function ContactPage() {
             title="Message Successfully Dispatched!"
             onClose={() => setSubmitted(false)}
           >
-            Your inquiry has been routed directly to our core engineering inbox (<strong className="text-white">hello@asksoftware.tech</strong>). An architect will contact you shortly!
+            Your inquiry has been routed directly to our core engineering inbox (<strong className="text-white">hello@abctechnologies.com</strong>). An architect will contact you shortly!
           </Alert>
         </div>
       )}
@@ -244,7 +244,7 @@ export default function ContactPage() {
               className="w-full py-4 rounded-xl font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:opacity-95 shadow-xl shadow-blue-600/30 transition-all flex items-center justify-center gap-2 text-base disabled:opacity-50"
             >
               <Send className="w-5 h-5" />
-              <span>{loading ? 'Dispatching to Engineering Team...' : 'Send Inquiry to Ask Software Tech'}</span>
+              <span>{loading ? 'Dispatching to Engineering Team...' : 'Send Inquiry to ABC Technologies'}</span>
             </button>
           </form>
         </div>
@@ -264,9 +264,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">General & RFP Email</p>
-                  <a href="mailto:hello@asksoftware.tech" className="text-base font-bold text-white hover:text-blue-400 transition-colors">
-                    hello@asksoftware.tech
+                  <a href="mailto:hello@abctechnologies.com" className="text-base font-bold text-white hover:text-blue-400 transition-colors">
+                    hello@abctechnologies.com
                   </a>
+                  <p className="text-xs text-slate-400">Direct Engineering Team Inbox</p>
                 </div>
               </div>
 
@@ -276,7 +277,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Direct Hotline</p>
-                  <p className="text-base font-bold text-white">+1 (800) 555-ASK-TECH</p>
+                  <p className="text-base font-bold text-white">+1 (800) 555-ABC-TECH</p>
                 </div>
               </div>
 

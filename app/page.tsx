@@ -170,17 +170,17 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Why Ask Software Technologies */}
+      {/* Why ABC Technologies */}
       <section className="py-20 bg-slate-900/40 border-y border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-xs font-semibold text-blue-400">
-                <ShieldCheck className="w-4 h-4" />
-                <span>The Ask Software Advantage</span>
-              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-xs font-bold text-blue-400 tracking-wide uppercase shadow-inner shadow-blue-500/20">
+              <Sparkles className="h-3.5 w-3.5 animate-pulse text-blue-400" />
+              <span>ABC Technologies Studio</span>
+            </div>
               <h3 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
-                Why Industry Leaders Choose Ask Software Technologies
+                Why Industry Leaders Choose ABC Technologies
               </h3>
               <p className="text-slate-300 text-base leading-relaxed">
                 We replace bureaucratic IT consultancies with agile, senior engineering talent. When you partner with us, you get direct access to seasoned architects who prioritize velocity and code quality above all else.
@@ -310,8 +310,8 @@ export default async function HomePage() {
           <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Ready to Build Your Next Software Breakthrough?
           </h3>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            Schedule a 30-minute architecture discovery call with Ask Software Technologies. We will review your product roadmap and provide actionable engineering insights.
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Schedule a 30-minute architecture discovery call with ABC Technologies. We will review your product roadmap and provide actionable engineering insights.
           </p>
           <div className="pt-4 flex flex-wrap justify-center gap-4">
             <Link

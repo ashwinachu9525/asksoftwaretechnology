@@ -53,10 +53,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-extrabold text-lg tracking-tight text-white dark:text-white light:text-slate-900 flex items-center gap-1.5">
-                ASK <span className="text-gradient">SOFTWARE</span>
+                ABC <span className="text-gradient">TECHNOLOGIES</span>
               </span>
               <span className="text-[10px] tracking-widest uppercase text-slate-400 font-semibold">
-                Technologies
+                Enterprise Studio
               </span>
             </div>
           </Link>

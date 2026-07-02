@@ -6,8 +6,8 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Our Services | Ask Software Technologies Studio',
-  description: 'Explore Ask Software Technologies services: Custom enterprise web platforms, AI & LLM integration, cloud DevOps, and dedicated software engineering squads.',
+  title: 'Our Services | ABC Technologies Studio',
+  description: 'Explore ABC Technologies services: Custom enterprise web platforms, AI & LLM integration, cloud DevOps, and dedicated software engineering squads.',
 };
 
 export default function ServicesPage() {
@@ -139,7 +139,7 @@ export default function ServicesPage() {
           End-to-End <span className="text-gradient">Software Capabilities</span>
         </h1>
         <p className="text-lg text-slate-300 leading-relaxed">
-          From complex distributed databases to sleek front-end interfaces, Ask Software Technologies provides the technical horsepower to bring your most ambitious digital ideas to life.
+          From complex distributed databases to sleek front-end interfaces, ABC Technologies provides the technical horsepower to bring your most ambitious digital ideas to life.
         </p>
       </div>
 
@@ -194,7 +194,7 @@ export default function ServicesPage() {
           <h2 className="text-xs font-bold uppercase tracking-widest text-emerald-400">Engagement Models</h2>
           <h3 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Flexible Engagement Tiers</h3>
           <p className="text-slate-400 text-base">
-            Choose how you want to partner with Ask Software Technologies. No lock-in contracts, transparent sprint billing.
+            Choose how you want to partner with ABC Technologies. No lock-in contracts, transparent sprint billing.
           </p>
         </div>
 

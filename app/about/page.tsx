@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { Target, Award, Users, Zap, Shield, Heart, Terminal, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Ask Software Technologies | Our Story & Engineering Leadership',
-  description: 'Learn about Ask Software Technologies, our engineering principles, core mission, and the leadership team driving enterprise digital innovation.',
+  title: 'About ABC Technologies | Our Story & Engineering Leadership',
+  description: 'Learn about ABC Technologies, our engineering principles, core mission, and the leadership team driving enterprise digital innovation.',
 };
 
 export default function AboutPage() {
@@ -73,7 +73,7 @@ export default function AboutPage() {
           Pioneering the Future of <span className="text-gradient">Custom Software Engineering</span>
         </h1>
         <p className="text-lg text-slate-300 leading-relaxed">
-          Founded with a rebel spirit, Ask Software Technologies emerged from a simple realization: traditional IT agencies are too slow, bloated, and disconnected from modern engineering breakthroughs.
+          Founded with a rebel spirit, ABC Technologies emerged from a simple realization: traditional IT agencies are too slow, bloated, and disconnected from modern engineering breakthroughs.
         </p>
       </div>
 
@@ -100,9 +100,9 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-6">
-          <h3 className="text-3xl font-extrabold text-white">Why Ask Software Technologies?</h3>
-          <p className="text-slate-300 leading-relaxed">
-            We operate as a high-velocity extension of your internal team. When you engage with Ask Software Technologies, your software isn't handed off to account managers; it is crafted by elite full-stack engineers obsessed with uptime, speed, and clean code.
+          <h3 className="text-3xl font-extrabold text-white">Why ABC Technologies?</h3>
+          <p className="text-slate-300 text-lg max-w-3xl mx-auto leading-relaxed">
+            We operate as a high-velocity extension of your internal team. When you engage with ABC Technologies, your software isn't handed off to account managers; it is crafted by elite full-stack engineers obsessed with uptime, speed, and clean code.
           </p>
           <ul className="space-y-3 pt-2">
             <li className="flex items-center gap-3 text-slate-200">
