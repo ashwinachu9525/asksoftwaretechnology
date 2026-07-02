@@ -9,7 +9,11 @@ function createPrismaClient() {
   const dbUrl = process.env.DATABASE_URL || 'file:./dev.db';
 
   if (dbUrl.startsWith('postgres://') || dbUrl.startsWith('postgresql://') || dbUrl.startsWith('prisma://') || dbUrl.startsWith('neon://')) {
-    const pool = new Pool({ connectionString: dbUrl });
+    const isSsl = dbUrl.includes('sslmode=') || dbUrl.includes('ssl=true') || dbUrl.includes('aivencloud') || !dbUrl.includes('localhost');
+    const pool = new Pool({
+      connectionString: dbUrl,
+      ssl: isSsl ? { rejectUnauthorized: false } : undefined,
+    });
     const adapter = new PrismaPg(pool);
     return new PrismaClient({ adapter, log: ['error'] });
   }
